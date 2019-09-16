@@ -1,93 +1,41 @@
 *Welcome, and thank you for contributing to this project. Please take your time to study this document carefully before making any changes to the codebase, to ensure you're on the same page with the rest of the team and we can all collaborate seamlessly.*   
 
 # Workflow
-This project uses the [Fork & Pull Model](https://help.github.com/en/articles/about-collaborative-development-models) 
-for receiving contributions. Read about the Fork & Pull Model 
-[here](https://help.github.com/en/articles/about-collaborative-development-models).          
-Your group leads will create a fork where all of your group's work will live. Individual contributions in each of these forks will be made in accordance with the [GitHub Flow](https://guides.github.com/introduction/flow/). 
+This project uses the [GitHub Flow](https://guides.github.com/introduction/flow/). 
 Read about it [here](https://guides.github.com/introduction/flow/).     
 More indepth git flow article [here](https://nvie.com/posts/a-successful-git-branching-model/).     
-Group leads will be responsible for creating working branches for each memeber as tasks are assigned. This means that you'd usually have no reason to create a branch on your own.    
+Create a working branch named @your-slack-username. Do your work on this branch and create a pull request to the source branch. Make sure you branch off the right source branch depending on the feature you're working on.     
 
-## Branch Structure
-### Upstream
-The main / original / upstream (hereinafter upstream) repository will have only two (2) branches - master and develop. Additional hotfix branches may be created to work on critical bugs in the deployment.    
-__'*develop*' - The Integration branch.__ This is where features from the different forks are brought together. Group leads, submit your pull requests here. This is the default branch. An integration team will be responsible for bringing it all together and resolving any possible merge conflicts that may arise.        
-__'*master*' - The deployment branch.__ The code on this branch goes live to our hosting servers and must be kept in pristine condition. When the integration (develop) branch reaches a milestone, the deployment (master) branch is updated via pull request.       
-__Hotfix branches.__ In the event that a bug slips past the integration team and makes it into deployment, a hotfix branch is created off of *master*. Prefix hotfix branch names with "hf__". On completion, this branch is merged with master, and also with *develop* so the fixes are reflected in all future deployments.
-
-### Forks
-Each fork represents work on a specific feature or bugfix. A group is assigned a fork and works together to complete the feature. Forked repositories should be renamed to include a suffix with double underscores that describes what feature is being worked on. Example: workflow-test-repo__feature-name.       
-__Feature branch.__ Once a fork is created, a feature branch is made. This is where all of the group members' individual work is brought together. When the feature is completed, a pull request is made from this feature branch to the upstream *develop* branch. Feature branches are name with the "ft__" prefix, with double underscores, for easy identification. The branch name should correspond with the suffix added to the repository name. Example: ft__feature-name.         
-__Working branch.__ This is where initial work gets done. The feature for a fork is broken down into small tasks which are distributed among group members. A branch is created for each group member to work on their task. The name of a working branch should correspond with the Slack display name of the person assigned to this task. Working branch names should begin with an "@" and all spaces should be replaced with a dash. Example: @Feranmi-Akinlade.
+## Branch Structure   
+__'*develop*' - The Integration branch.__ This is the default branch. This is where features from the subteams are brought together. Subteams, submit your pull requests here, once your subteam branch is ready for integration. An integration team will be responsible for bringing it all together and resolving any possible merge conflicts that may arise.        
+__'*master*' - The deployment branch.__ The code on this branch goes live to our hosting servers and must be kept in pristine condition. When the integration (develop) branch reaches a milestone, the deployment (master) branch is updated via pull request.      
+__'*docs*' - The documentation branch__ From time to time, changes will be made to the project's documentations e.g README.md or this file you're reading now. These changes are made in a working branch created from, and merged back into, the *docs* branch. You should prefix such branches with "doc--" to separate them from other working branches. e.g *doc--@Feranmi-Akinlade*.
+__Hotfix branches.__ In the event that a bug slips past the integration team and makes it into deployment, a hotfix branch is created off of *master*. Prefix hotfix branch names with "hf__". On completion, this branch is merged with master, and also with *develop* so the fixes are reflected in all future deployments.      
+__Subteam branches - Frontend & Backend.__ Of course there is the design subteam, but they work on Figma, so no branch here. When a milestone is reached, a pull request is made to the *develop* branch.
+__Working branch.__ This is where initial work gets done. Any new features are broken down into tasks for each team member who then creates a working branch to work in. The name of a working branch should correspond with the Slack display name of the person assigned to this task. Working branch names should begin with an "@" and all spaces should be replaced with a dash. Example: @Feranmi-Akinlade. Create a working branch from, and merge it back into, the subteam branch that owns the task.
 
 ### Staying Updated
-When working with large teams on the same codebase, sometimes others make changes that affect your work. While great care has been taken to create a modular team workflow to keep this to a minimum, merge conflicts are inevitable. It would _suck_ to finish working on a task or feature, only to find that the codebase has evolve and you need to rework everything to conform to the new changes. This is managed in two ways.       
-__*First*__, check with the integration team before making changes to the codebase. This means that the details of how your group will implement it's assigned feature must be approved by the integration team before work begins. This is to ensure that you do not make changes that will adversely affect the work of others. GitHub has a handy feature for this - _[issues](https://help.github.com/en/articles/about-issues)_. Group leads should _[create an issue](https://help.github.com/en/articles/creating-an-issue)_ and _[label it](https://help.github.com/en/articles/applying-labels-to-issues-and-pull-requests)_ with 'feature' or 'bugfix' as appropriate. When you create an issue, it is automatically tracked on the teams _[project board](https://help.github.com/en/articles/about-project-boards)_. Your group should only begin coding when the implementation details have been finalized. Keep the issue open as long as work continues on the feature. All discussions regarding a feature are done under this issue. Your pull request is linked with the corresponding issue when work is completed, by adding "*closes #{number}*" to the pull request description on GitHub. Replace {number} with the appropriate issue number e.g _closes #5_.       
-__*Second*__, each team member needs to make sure that at every given time, their working directory is up-to-date with the latest changes from the upstream *develop* branch. This is achieved with a two-fold process.       
-#### Group Leads - Pulling Upstream
-*This section only applies to group/sub-team leads.*       
-After setting up your fork on github and cloning it locally on your system, you'll need to run a command just once to create a connection between your local repository and the remote upstream repository. Note that there's automatically a remote 'origin' repository set up when you clone. This points to your fork. Now you need to set up 'upstream' which will point to the central upstream repo.
-
-0. Open a terminal and go into the directory for the newly cloned repo. Now add the upstream remote like so:        
-    <pre>git remote add upstream git://github.com/TEAM-NAME/REPO-NAME.git</pre>    
-
-Now you're all set up.       
-__*The following steps must be run periodically to keep your work, and that of your entire sub-team up-to-date! You can run these commands as often as every hour. You want to fetch any new changes as soon as possible. Each time you want to begin working, or take a break from your work, run these first.*__
-
-1. Switch to the develop branch        
-    <pre>git checkout develop</pre>     
-2. Get all remote (online) upstream changes into your local computer.        
-    <pre>git fetch upstream</pre>     
-3. Merge changes fetched with your local develop branch. ('develop' must be the currently checked-out branch)       
-    <pre>git merge upstream/develop</pre>    
-4. Push the newly merged changes to your fork's remote (online) repo. This is configured as 'origin' by default.    
-    <pre>git push origin develop</pre>      
-
-Recall that your group works on a feature branch. So now you need to update that too.
-
-5. Switch to your feature branch.        
-    <pre>git checkout ft__your-feature-name</pre>        
-6. Now make sure your local feature branch is up-to-date with any work your group members have done.        
-    ```
-      git fetch origin       
-      git merge origin/ft__your-feature-name
-    ```
-    *You may encounter merge conflicts here.
-    [Resolve them](https://help.github.com/en/articles/resolving-a-merge-conflict-using-the-command-line),
-    then come back and complete the merge. If you merge often enough, any conflicts would be trivial and very few.*
-
-7. Merge the changes on the newly merged develop branch, into your feature branch.        
-    <pre>git merge develop</pre>
-    *You may encounter merge conflicts here.
-    [Resolve them](https://help.github.com/en/articles/resolving-a-merge-conflict-using-the-command-line),
-    then come back and complete the merge. If you merge often enough, any conflicts would be trivial and very few.*
-
-8. Finally, push your newly merged feature branch to the remote github server so your group members can get updated as well.        
-    <pre>git push origin ft__your-feature-name</pre>      
-9. Now return to your working branch.        
-    <pre>git checkout @your-slack-username</pre>      
-
-Continue with the steps in the next section.
-
-#### All Team Members - Pulling Origin
-*Your group/sub-team lead has the responsibility of keeping your forked repo updated on the remote github server. All you need to do is get those changes unto your local computer.*       
-Your local repository automatically has a remote 'origin' set up when you clone. This points to the online repository you cloned unto your system. You will be pushing your work to 'origin' to back it up online.       
-__*The following steps must be run periodically to keep your work up-to-date. You can run these commands as often as every hour. You want to fetch any new changes as soon as possible. Each time you want to begin working, or take a break from your work, run these first.*__       
+When working with teams on the same codebase, sometimes others make changes that affect your work. While great care has been taken to create a modular team workflow to keep this to a minimum, merge conflicts are inevitable. It would _suck_ to finish working on a task, only to find that the codebase has evolve and you need to rework everything to conform to the new changes. This is managed in two ways.       
+__*First*__, discourse changes with the team beforehand. This is to ensure that you do not make changes that will adversely affect the work of others. GitHub has a handy feature for this - _[issues](https://help.github.com/en/articles/about-issues)_. [Create an issue](https://help.github.com/en/articles/creating-an-issue)_ and _[label it](https://help.github.com/en/articles/applying-labels-to-issues-and-pull-requests)_. When you create an issue, it is automatically tracked on the team's _[project board](https://help.github.com/en/articles/about-project-boards)_. Keep the issue open as long as work continues on the feature. All discussions regarding that feature are done under this issue. Your pull request is linked with the corresponding issue when work is completed, by adding "*closes #{number}*" to the pull request description on GitHub. Replace {number} with the appropriate issue number e.g _closes #5_.       
+__*Second*__, each team member needs to make sure that at every given time, their working directory is up-to-date with the latest changes from the remote origin (online).       
+Make sure you have the _origin_ remote set up.    
+  <pre>git remote add origin git://github.com/team-wildcards/trip.ng.git</pre>    
+You will be pushing your work to 'origin' to back it up online.       
+__*The following steps must be run periodically to keep your work up-to-date. You can run these commands as often as every hour. You want to fetch any new changes as soon as possible.*__       
 Be sure to 
 [stash](https://dev.to/neshaz/how-to-git-stash-your-work-the-correct-way-cna) 
-or commit all changes first.  
+or commit all local changes first.  
 
-1. Switch to the feature branch        
-    <pre>git checkout ft__your-feature-name</pre>          
+1. Switch to your subteam branch        
+    <pre>git checkout frontend</pre>          
 2. Get all remote (online) 'origin' changes into your local computer.        
     <pre>git fetch origin</pre>      
-3. Merge changes fecthed with your local feature branch. (The local feature branch must be the currently checked-out branch. See step 1 above.)        
-    <pre>git merge origin/ft__your-feature-name</pre>      
+3. Merge changes fecthed with your local subteam branch. (The local subteam branch must be the currently checked-out branch. See step 1 above.)        
+    <pre>git merge origin/frontend</pre>      
 4. Next, switch to your working branch.        
     <pre>git checkout @your-slack-username</pre>      
-5. Merge the changes on the newly merged feature branch, into your working branch. You may run 'git branch' to confirm which branch you're about to merge into.        
-    <pre>git merge ft__your-feature-name</pre>
+5. Merge the changes on the newly merged subteam branch, into your working branch. You may run 'git branch' to confirm which branch you're about to merge into.        
+    <pre>git merge frontend</pre>
     *You may encounter merge conflicts here.
     [Resolve them](https://help.github.com/en/articles/resolving-a-merge-conflict-using-the-command-line),
     then come back and complete the merge. If you merge often enough, any conflicts would be trivial and very few.*    
@@ -101,7 +49,7 @@ This section defines the guidelines and methodologies to used for the front-end 
 
 ### CSS - Introducing BEM.
 CSS is great, but it can get messy and difficult to maintain styles as the css file grows larger. It is therefore necessary for the team to adhere to strict guidelines when work on our stylesheets to keep the code clean and maintainable.
-**_Do not use abbreviations when naming elements. This introduces confusion as other team members may struggle to figure out what it represents. For example, use "button" instead of "btn". It may be longer to type, but it makes your code more readable and saves the team headache. Be very generous with comments._**
+**_Do not use abbreviations when naming elements. This introduces confusion as other team members may struggle to figure out what it represents. For example, use ```.button``` instead of ```.btn```. It may be longer to type, but it makes your code more readable and saves the team headache. Be very generous with comments._**
 
 #### Do Not Use Inline Styles. Ever.
 Inline styles have just about the highest specificity an so cannot be overriden from with the stylesheet. They also make debugging style conflicts more difficult. Inline styles do not lend themselves to the DRY principle.
@@ -213,10 +161,10 @@ We define reusable values, and global defaults, in a globals.css file. This file
 ```
 
 ### HTML
-**_Do not use abbreviations when naming elements. This introduces confusion as other team members may struggle to figure out what it represents. For example, use "button" instead of "btn". Be very generous with comments._**
+**_Do not use abbreviations when naming elements. This introduces confusion as other team members may struggle to figure out what it represents. For example, use ```.button``` instead of ```.btn```. Be very generous with comments._**
 
 #### Semantics Please.
-HTML5 introduced semantic tags that such as ```html <section>``` and ```html <footer>``` which implicitly convey meaning about their
+HTML5 introduced semantic tags that such as ```<section>``` and ```<footer>``` which implicitly convey meaning about their
 purpose on the page. These tags improve accesibility by making it easier for screen readers to interprete the information on a page for visually impaired users, and also aiding Search Engine Optimization. Where relevant, use these tags instead of the generic containers.
 
 ##### Rule 1 - Headings
@@ -226,10 +174,10 @@ All headings must be marked with relevant tags from h1 to h6 depending to the pa
 The anchor tag in HTML has a specific function - linking a user to another page. Buttons on the other hand are used to provide additional functionality to the user. Therefore, if a button takes the user to a new page, only then must the anchor tag be used. In all other cases, the button tag must be used.
 
 ##### Rule 3 - Logical sections
-```html <header>, <section>, <aside>, <footer>```. These are semantic HTML5 tags used to mark separate sections of a page. Do NOT use the generic <div> tag where any of these would be more appropriate.
+```<header>```, ```<section>```, ```<aside>```, ```<footer>```. These are semantic HTML5 tags used to mark separate sections of a page. Do NOT use the generic <div> tag where any of these would be more appropriate.
 
 ### JavaScript
-**_Do not use abbreviations when naming elements. This introduces confusion as other team members may struggle to figure out what it represents. For example, use ```javascript let navButton``` instead of ```javascript let navBtn```. It may be longer to type, but it makes your code more readable and saves the team headache. Be very generous with comments._**
+**_Do not use abbreviations when naming elements. This introduces confusion as other team members may struggle to figure out what it represents. For example, use ```let navButton``` instead of ```let navBtn```. It may be longer to type, but it makes your code more readable and saves the team headache. Be very generous with comments._**
 
 Write clean code. Make things modular. Keep external libraries to minimum to avoid making the app bloated.
 Further guidelines to be included as the project progresses.
