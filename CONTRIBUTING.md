@@ -1,17 +1,15 @@
 *Welcome, and thank you for contributing to this project. Please take your time to study this document carefully before making any changes to the codebase, to ensure you're on the same page with the rest of the team and we can all collaborate seamlessly.*   
 
 # Workflow
-This project uses the [GitHub Flow](https://guides.github.com/introduction/flow/). 
-Read about it [here](https://guides.github.com/introduction/flow/).     
-More indepth git flow article [here](https://nvie.com/posts/a-successful-git-branching-model/).     
-Create a working branch named @your-slack-username. Do your work on this branch and create a pull request to the source branch. Make sure you branch off the right source branch depending on the task (frontend/backend) you're working on.     
+This project's workflow is based on the [GitHub Flow](https://guides.github.com/introduction/flow/). More indepth git flow article [here](https://nvie.com/posts/a-successful-git-branching-model/).     
 
 ## Branch Structure   
 __'*develop*' - The Integration branch.__ This is the default branch. This is where features from the subteams are brought together. Subteams, submit your pull requests here, once your subteam branch is ready for integration. An integration team will be responsible for bringing it all together and resolving any possible merge conflicts that may arise.        
 __'*master*' - The deployment branch.__ The code on this branch goes live to our hosting servers and must be kept in pristine condition. When the integration (develop) branch reaches a milestone, the deployment (master) branch is updated via pull request.      
-__Hotfix branches.__ In the event that a bug slips past the integration team and makes it into deployment, a hotfix branch is created off of *master*. Prefix hotfix branch names with "hf__". On completion, this branch is merged with master, and also with *develop* so the fixes are reflected in all future deployments. **Documentation changes** will also be treated similar to hotfixes. From time to time, changes will be made to the project's documentations e.g README.md or this file you're reading now. These changes are made in a working branch created from, and merged back into, the *develop* branch. You should prefix such branches with "doc--" to separate them from other working branches. e.g *doc--@Feranmi-Akinlade*.      
+__Hotfix branches.__ In the event that a bug slips past the integration team and makes it into deployment, a hotfix branch is created off of *master*. Prefix hotfix branch names with "hf__". On completion, this branch is merged with master, and also with *develop* so the fixes are reflected in all future deployments.     
+**Documentation changes** will also be treated similar to hotfixes. From time to time, changes will be made to the project's documentations e.g README.md or this file you're reading now. These changes are made in a working branch created from, and merged back into, the *develop* branch. You should prefix such branches with "doc--" to separate them from other working branches. e.g *doc--@Feranmi-Akinlade*.      
 __Subteam branches - Frontend & Backend.__ Of course there is the design subteam, but they work on Figma, so no branch here. When a milestone is reached, a pull request is made to the *develop* branch.      
-__Working branch.__ This is where initial work gets done. Any new features are broken down into tasks for each team member who then creates a working branch to work in. The name of a working branch should correspond with the Slack display name of the person assigned to this task. Working branch names should begin with an "@" and all spaces should be replaced with a dash. Example: @Feranmi-Akinlade. Create a working branch from, and merge it back into, the subteam branch that owns the task.
+__Working branch.__ This is where initial work gets done. Any new features are broken down into tasks for each team member who then creates a working branch to work in. The name of a working branch should correspond with the Slack display name of the person assigned to this task. Working branch names should begin with an "@" and all spaces should be replaced with a dash. Example: @Feranmi-Akinlade. Create a working branch from, and merge it back into, the subteam branch that owns the task. Make sure you branch off the right source branch depending on the task (frontend/backend) you're working on.     
 
 ### Staying Updated
 When working with teams on the same codebase, sometimes others make changes that affect your work. While great care has been taken to create a modular team workflow to keep this to a minimum, merge conflicts are inevitable. It would _suck_ to finish working on a task, only to find that the codebase has evolve and you need to rework everything to conform to the new changes. This is managed in two ways.       
@@ -21,8 +19,7 @@ Make sure you have the _origin_ remote set up.
   <pre>git remote add origin git://github.com/team-wildcards/trip.ng.git</pre>    
 You will be pushing your work to 'origin' to back it up online.       
 __*The following steps must be run periodically to keep your work up-to-date. You can run these commands as often as every hour. You want to fetch any new changes as soon as possible.*__       
-Be sure to 
-[stash](https://dev.to/neshaz/how-to-git-stash-your-work-the-correct-way-cna) 
+Be sure to [stash](https://dev.to/neshaz/how-to-git-stash-your-work-the-correct-way-cna) 
 or commit all local changes first.  
 
 1. Switch to your subteam branch        
@@ -65,7 +62,7 @@ An example of a reusable component is the footer section which is present on eve
 also includes components whose contents might change but need to appear consistently throughout the web app,
 Examples include buttons and headings. All instances these elements share the same styles.
 Styles for this section should not be repeated in each page's stylesheet, rather a separate stylesheet should be 
-created for such sections and added to every page that needs it using the @import CSS rule.
+created for such sections and added to every page that needs it using the `@import` CSS rule.
 
 #### Selectors - The BEM Methodology
 The guidelines in this section are based heavily on the popular CSS methodology called BEM.
