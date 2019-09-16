@@ -16,7 +16,6 @@ if (isset($_POST['signup'])) {
     $password = mysqli_real_escape_string($con, $pass_unsafe);
     $confirm_password = mysqli_real_escape_string($con, $conf_pass_unsafe);
 
-
     //Validation
 
     //check if email exists
@@ -36,14 +35,40 @@ if (isset($_POST['signup'])) {
         addAlert('error', 'Email address already exists!');
         echo "<script>document.location='signup.php'</script>";
     } else {
+        include_once('includes/config.php');
 
-        $res = mysqli_query($con, "INSERT INTO users SET fullname = '$fullname', password = '$password', email = '$email'") or die(mysqli_error($con));
-        if ($res) {
-            addAlert('success', 'Registration Successful! Please Login');
-            echo "<script type='text/javascript'>document.location='index.php'</script>";
+        //file system or db
+        if ($implementationType = 'FILE') {
+
+            $jsonString = file_get_contents('users.json');
+            $data = json_decode($jsonString, true);
+
+            $users = $data['users'];
+            $new_user = array('user_id' => 00,  'fullname' => $fullname, 'email' => $email, 'password' =>  $password);
+
+            array_push($users, $new_user);
+
+            $newArray = $arr = array('users' => [$new_user, $new_user]);
+            $newJsonString = json_encode($newArray);
+            $res = file_put_contents('users.json', $newJsonString);
+
+            if ($res) {
+                addAlert('success', 'Registration Successful! Please Login');
+                echo "<script type='text/javascript'>document.location='index.php'</script>";
+            } else {
+                addAlert('error', 'Something went wrong!');
+                echo "<script type='text/javascript'>document.location='index.php'</script>";
+            }
         } else {
-            addAlert('error', 'Something went wrong!');
-            echo "<script type='text/javascript'>document.location='index.php'</script>";
+
+            $res = mysqli_query($con, "INSERT INTO users SET fullname = '$fullname', password = '$password', email = '$email'") or die(mysqli_error($con));
+            if ($res) {
+                addAlert('success', 'Registration Successful! Please Login');
+                echo "<script type='text/javascript'>document.location='index.php'</script>";
+            } else {
+                addAlert('error', 'Something went wrong!');
+                echo "<script type='text/javascript'>document.location='index.php'</script>";
+            }
         }
     }
 } else {
