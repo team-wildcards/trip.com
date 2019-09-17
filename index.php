@@ -1,26 +1,45 @@
-<?php include('./shared/layout_top.php'); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<?php include('./shared/head.innerhtml.php'); ?>
+	
+	<title>Login to Trip</title>
+</head>
 
-	<script>
-		$(document).ready(function() {
-			$(".glyphicon").click(function() {
-				$(this).toggleClass("glyphicon-eye-close").toggleClass('glyphicon-eye-open');
-				var input = $(this).prev().attr("type");
-				if (input == "password")
-					$(this).prev().attr("type", "text");
-				else
-					$(this).prev().attr("type", "password");
-			});
-		});
-	</script>
-	<div class="form">
-		<form id="form">
-			<i class="fa fa-envelope icon"></i><input type="email" name="email" placeholder=" | Email">
-			<i class="fa fa-lock icon"></i><input type="password" name="password" placeholder=" | Password"><i class="glyphicon glyphicon-eye-open"></i><br>
-			<p class="password">Forgot? <a class="link" href="#">Password</a></p>
-			<input type="submit" class="submit" value="LOGIN">
-			<p class="register">New here? <a href="#" class="link">Register</a></p>
-		</form>
-	</div>
+<body>
+	<?php include('./shared/titlebar.php'); ?>
 
+	<form class="form is-login">
+		<label class="form__field">
+			<i class="fa fa-envelope icon"></i>
+			<input type="email" name="email" placeholder=" | Email">
+		</label>
 
-<?php include('./shared/layout_bottom.php'); ?>
+		<label class="form__field">
+			<i class="fa fa-lock icon"></i>
+			<input type="password" name="password" placeholder=" | Password">
+			<i class="glyphicon glyphicon-eye-open"></i>
+		</label>
+
+		<a class="forgot-password" href="#">
+			Forgot Password?
+		</a>
+
+		<input type="submit" class="submit" value="LOGIN">
+
+		<p>
+			New here?
+			<a href="#" class="link">
+				Register
+			</a>
+		</p>
+	</form>
+
+	<!--
+		It is a common practise to include scripts at the bottom of the body.
+		This ensures that your scripts are only run after all page content has loaded.
+		As an example, you usually want JQuery to be included before your script runs.
+	-->
+	<script src="./scripts/index.js"></script>
+</body>
+</html>
