@@ -54,7 +54,7 @@ main {
 }
 
 .form {
-	padding: 30px 10%;
+	padding: 30px 5%;
   height: 85%;
   width: 70vh;
 	border-radius: 25px;
@@ -72,7 +72,6 @@ main {
   .form {
     width: 80vw;
     border-radius: 10px;
-		padding: 30px 5%;
 	}
 	
 	.background-art :first-child {
@@ -126,6 +125,7 @@ main {
 	height: 100%;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	flex: 1 1 10%; /*flex-grow flex-shrink flex-basis*/
 	padding: 0 10px;
 	background-color: #2D0051;
@@ -156,4 +156,8 @@ main {
 .form__link {
 	margin-top: -30px;
 	text-align: center;
+}
+
+.form__link.is-forgot-password {
+	align-self: flex-end;
 }
