@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php session_start();
+// if(isset($_SESSION['name'])){
+// 	header('Location: success.php');
+// }
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,6 +46,9 @@
 				<i class="fa fa-lock icon"></i>
 				<input type="password" name="password" placeholder="Password">
 				<i class="fa fa-eye-slash icon is-show-password"></i>
+				<a class="form__link is-forgot-password" href="#">
+					Forgot Password?
+				</a>
 			</div>
 
 			<div class="form__field is-confirm-password">
@@ -47,18 +56,15 @@
 				<input type="password" name="confirm_password" placeholder="Confirm Password">
 			</div>
 
-			<a class="form__link is-forgot-password" href="#">
-				Forgot Password?
-			</a>
-
-			<input type="submit" class="form__submit" name="login" value="LOG IN">
-
-			<p class="form__link is-signup-toggle">
-				New here?
-				<a href="#">
-					Sign up.
-				</a>
-			</p>
+			<div>
+				<input type="submit" class="form__submit" name="login" value="LOG IN">
+				<p class="form__link is-signup-toggle">
+					New here?
+					<a href="#">
+						Sign up.
+					</a>
+				</p>
+			</div>
 		</form>
 	</main>
 
