@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+ .fa{
+    top: 41px;
+    left: 14px;
+     position: relative;
+ }
+ .glyphicon{
+     left: 88%;
+     top: -40px;
+     position: relative;
+ }
+ h2{
+    text-align: center;
+    font-weight: bold;
+ }
+ input[type=password], input[type=email], input[type=text] {
+   width: 100%;
+   display: block;
+   padding: 12px 35px;
+   margin: 8px auto;
+   border: 1px solid #979797;
+   border-radius: 20px;
+   box-sizing: border-box;
+}
+.login {
+   border-radius: 20px;
+   padding: 0;
+   height: 32px;
+   width: 50%;
+   box-sizing: border-box;
+   background: #2D0051;
+   margin: 0 auto;
+   color: #fff;
+   border: none;
+   display: block;
+   cursor: pointer;
+}
+.modal-container{
+   padding: 5% 3%;
+   width: 28%;
+   background: #fff;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 25px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+.link {
+   text-decoration: none;
+   color: #2D0051;
+   cursor: pointer;
+}
+.password{
+   text-align: right;
+   top:-18px;
+   left: -10px;
+   font-style: italic;
+   position: relative;
+}
+.register{
+   text-align: right;
+   top:40px;
+   left: -10px;
+   position: relative;
+}
+@media only screen and (max-width: 650px){
+   .modal-container {
+   width: 50%;
+}
+.register{
+   top:20px;
+}
+}
