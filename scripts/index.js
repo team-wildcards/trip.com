@@ -27,7 +27,7 @@ const toggleSignupForm = ()=> {
 			form.attr("target", "signup.php");
 
 			$(".form__link.is-signup-toggle").html(`
-				Already have an account?
+				Already have an account? <br>
 				<a href="#" onclick="toggleSignupForm()">
 					Log in.
 				</a>

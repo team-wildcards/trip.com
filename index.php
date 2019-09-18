@@ -9,14 +9,20 @@
 </head>
 
 <body>
-	<?php include('./shared/titlebar.php'); ?>
+	<div class="background-art">		
+		<img src="assets/images/top-bg.png" />
+		<img src="assets/images/bottom-bg.png" />
+	</div>
 
-	<main>
-		<div class="background-art">		
-			<img src="assets/images/top-bg.png" />
-			<img src="assets/images/bottom-bg.png" />
-		</div>
-		
+	<h1 class="page-heading">
+		<img 
+			class="page-heading__logo" 
+			src="assets/images/TripDotCom-white.svg"
+			alt="Trip dot com"
+		/>
+	</h1>
+
+	<main>		
 		<form class="form is-login" target="login.php">
 			<div class="form__field">
 				<i class="fa fa-envelope icon"></i>

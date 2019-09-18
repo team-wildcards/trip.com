@@ -1,9 +1,20 @@
-main {
-	height: 90vh; /*Takes up all space below titlebar*/
+.page-heading {
+	position: sticky;
+	top: 0;
+	left: 0;
+	padding-top: 20px;
+	height: 10vh;
+	width: 100vw;
 	display: flex;
-	flex-flow: column nowrap;
-	justify-content: center;
+	flex-flow: row nowrap;
 	align-items: center;
+	margin: 0;
+	z-index: 1;
+}
+
+.page-heading__logo {
+	height: 400%;
+	display: block;
 }
 
 .background-art {
@@ -32,6 +43,14 @@ main {
 	height: 40%;
 	object-fit: contain;
 	object-position: right bottom;
+}
+
+main {
+	height: 90vh; /*Takes up all space below titlebar*/
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
 }
 
 .form {
@@ -136,4 +155,5 @@ main {
 
 .form__link {
 	margin-top: -30px;
+	text-align: center;
 }

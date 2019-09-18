@@ -50,13 +50,14 @@
 			<li class="nav-item">
 				<a class="nav-link" href="#">Our Team</a>
 			</li>
-			<li class="nav-item active">
+			<!-- li class="nav-item active">
 				<a class="nav-link" href="#">Login</a>
-			</li>
+			</li -->
 		</ul>
 	</nav>
 
-	<button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+	<!-- Disabled 'cos it currently doesn't work as expected -->
+	<button disabled class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 </header>
