@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php session_start(); 
+if(isset($_SESSION['name'])){
+	header('Location: success.php');
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
