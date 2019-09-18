@@ -13,11 +13,12 @@
 <body>
 	<?php include('./shared/titlebar.php'); ?>
 
-	<div class="card">
-		<i class="fas fa-check-circle"></i>
-		<h3 class="content">
-			<strong>Your Sign in was successful!</strong>
-		</h3>  
-	</div>
+	<p class="card">
+		<i class="card__icon fas fa-check-circle"></i>
+		<strong class="card__content">
+			Your Sign in was successful!
+		</strong>
+		<span>We're the Wildcards. And we're pleased to have you.</span>
+	</p>
 </body>
 </html>
