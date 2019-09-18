@@ -20,7 +20,7 @@ function showAlert()
             <!-- Do this by exposing: -->
             <?php echo "<div class='alert alert-danger'>" . $_SESSION['alert_message'] . "</div>"; ?>
 
-        <?php } elseif ($_SESSION['alert_flag'] == 'success') { ?> <div class="row" style="margin-top: 8px;">
+        <?php } elseif ($_SESSION['alert_flag'] == 'success') { ?>
 
                 <!-- Add CSS & FrontEnd to display Success Messages here -->
                 <!-- Do this by exposing: -->
