@@ -33,6 +33,7 @@ https://www.figma.com/file/LGX9KEZZ3OyeFp1ikpw8OV/Team_wildcards?node-id=0%3A1
 ## Articles
 
 ### Project work:
+https://lucid.blog/elgivastephen/post/team-wildcards-tutorial-on-how-to-create-a-login-page-e73
 
 ### HTML, CSS & JS Tutorial:
 
