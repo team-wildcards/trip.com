@@ -43,3 +43,28 @@
 
 <!-- Global styles and Reusable CSS Vars -->
 <link rel="stylesheet" href="./assets/css/globals.css">
+
+<script>
+	const normalizeViewportHeight = ()=> {
+		let viewport = document.querySelector('meta[name="viewport"]');
+		let newViewport = viewport;
+
+		defaultValue = "width=device-width, height=device-height, initial-scale=1.0";
+		normalizedValue = "width=device-width, height=450, initial-scale=1.0"
+
+		if (document.documentElement.clientHeight < 450) {
+			newViewport.setAttribute("content", normalizedValue);
+
+			document.head.replaceChild(newViewport, viewport);	
+		}
+		else if (document.documentElement.clientHeight > 450) {
+			newViewport.setAttribute("content", defaultValue);
+
+			document.head.replaceChild(newViewport, viewport);
+		}
+	}
+
+	window.onload = normalizeViewportHeight;
+
+	window.onresize = normalizeViewportHeight;
+</script>
