@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 	<?php include('./shared/head.innerhtml.php'); ?>
+
+	<link rel="stylesheet" href="./assets/css/index.css">
 	
 	<title>Login to Trip</title>
 </head>
@@ -9,31 +11,38 @@
 <body>
 	<?php include('./shared/titlebar.php'); ?>
 
-	<form class="form is-login">
-		<label class="form__field">
-			<i class="fa fa-envelope icon"></i>
-			<input type="email" name="email" placeholder=" | Email">
-		</label>
+	<main>
+		<form class="form is-login">
+			<div class="form__field">
+				<i class="fa fa-envelope icon"></i>
+				<input type="email" name="email" placeholder="Email">
+			</div>
 
-		<label class="form__field">
-			<i class="fa fa-lock icon"></i>
-			<input type="password" name="password" placeholder=" | Password">
-			<i class="glyphicon glyphicon-eye-open"></i>
-		</label>
+			<div class="form__field">
+				<i class="fa fa-lock icon"></i>
+				<input type="password" name="password" placeholder="Password">
+				<i class="fa fa-eye-slash icon is-show-password"></i>
+			</div>
 
-		<a class="forgot-password" href="#">
-			Forgot Password?
-		</a>
+			<div class="form__field is-confirm-password">
+				<i class="fa fa-lock icon"></i>
+				<input type="password" placeholder="Confirm Password">
+			</div>
 
-		<input type="submit" class="submit" value="LOGIN">
-
-		<p>
-			New here?
-			<a href="#" class="link">
-				Register
+			<a class="form__link is-forgot-password" href="#">
+				Forgot Password?
 			</a>
-		</p>
-	</form>
+
+			<input type="submit" class="form__submit" value="LOG IN">
+
+			<p class="form__link is-signup-toggle">
+				New here?
+				<a href="#">
+					Sign up.
+				</a>
+			</p>
+		</form>
+	</main>
 
 	<!--
 		It is a common practise to include scripts at the bottom of the body.

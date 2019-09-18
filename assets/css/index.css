@@ -1,8 +1,92 @@
+main {
+	height: 90vh; /*Takes up all space below titlebar*/
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.form {
+	padding: 30px 10%;
+  height: 85%;
+  width: 70vh;
+	border-radius: 25px;
+	background: #fff;
+	box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+	align-items: center;
+	z-index: 2;
+	transition: opacity 1s ease;
+}
+
+@media (max-width: 600px) {
+  .form {
+    width: 80vw;
+    border-radius: 10px;
+		padding: 30px 5%;
+	}
+}
+
+.form.is-login .form__field.is-confirm-password,
+.form.is-signup .form__link.is-forgot-password {
+	display: none;
+}
+
+.transparent {
+	opacity: 0;
+}
+
 .form__field {
 	display: flex;
-	justify-content: space-between;
+	align-items: center;
+	border: 1px solid #2D0051;
+	border-radius: 1000px; /*An obscenely large border radius makes the shorter side a perfect curve*/
+	overflow: hidden;
+	height: 50px;
+	width: 100%;
+	position: relative;
+	z-index: 1;
 }
 
 .form__field input {
-	flex-grow: 10;
+	border: none;
+	margin: 0 0;
+	padding: 0 10px;
+	flex: 100 100 90%; /*flex-grow flex-shrink flex-basis*/
+}
+
+.form__field .icon {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	flex: 1 1 10%; /*flex-grow flex-shrink flex-basis*/
+	padding: 0 10px;
+	background-color: #2D0051;
+	color: white;
+}
+
+.form__field .icon.is-show-password {
+	background-color: initial;
+	color: #2D0051;
+	position: absolute;
+	right: 0;
+	z-index: 2;
+}
+
+.form__submit {
+	border-radius: 25px;
+	text-transform: uppercase;
+	padding: 9px 49px;
+	background: #2D0051;
+	margin: 0 auto;
+	color: #fff;
+	border: none;
+	display: flex;
+	cursor: pointer;
+}
+
+.form__link {
+	margin-top: -30px;
 }
