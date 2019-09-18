@@ -1,7 +1,5 @@
 .page-heading {
-	position: sticky;
-	top: 0;
-	left: 0;
+	position: relative;
 	padding-top: 20px;
 	height: 10vh;
 	width: 100vw;
@@ -59,14 +57,15 @@ main {
 	height: 85%;
 	width: 70vh;
 	border-radius: 25px;
-	background: #fff;
+	background: white;
 	box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.25);
 	display: flex;
 	flex-flow: column nowrap;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	align-items: center;
 	z-index: 2;
 	transition: opacity 1s ease;
+	overflow: visible;
 }
 
 @media (max-width: 600px) {
@@ -106,22 +105,25 @@ main {
 .form__field {
 	display: flex;
 	align-items: center;
-	border: 1px solid #2D0051;
-	border-radius: 1000px;
+	border: 1px solid var(--primary-color);
 	/*An obscenely large border radius makes the shorter side a perfect curve*/
-	overflow: hidden;
+	border-radius: 1000px;
 	height: 50px;
-	width: 100%;
+	width: 95%;
 	position: relative;
 	z-index: 1;
+	margin-bottom: 20px;
 }
 
 .form__field input {
 	border: none;
 	margin: 0 0;
 	padding: 0 10px;
-	flex: 100 100 90%;
-	/*flex-grow flex-shrink flex-basis*/
+	height: 100%;
+	width: 90%;
+	/*Prevent bleeding off the curved edge of the input field*/
+	border-radius: 0 1000px 1000px 0;
+	border: 1px solid var(--primary-color);
 }
 
 .form__field .icon {
@@ -129,39 +131,48 @@ main {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	flex: 1 1 10%;
-	/*flex-grow flex-shrink flex-basis*/
-	padding: 0 10px;
-	background-color: #2D0051;
+	width: 10%;
+	padding: 0 15px;
+	background-color: var(--primary-color);
 	color: white;
+	/*Prevent bleeding off the curved edge of the input field*/
+	border-radius: 1000px 0 0 1000px
 }
 
 .form__field .icon.is-show-password {
 	background-color: initial;
-	color: #2D0051;
+	color: var(--primary-color);
 	position: absolute;
-	right: 0;
+	right: 5px;
 	z-index: 2;
 	cursor: pointer;
+	/*Prevent bleeding off the curved edge of the input field*/
+	border-radius: 0 1000px 1000px 0;
+}
+
+.form__link.is-forgot-password {
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 110%;
 }
 
 .form__submit {
 	border-radius: 25px;
 	text-transform: uppercase;
 	padding: 9px 49px;
-	background: #2D0051;
+	background: var(--primary-color);
 	margin: 0 auto;
-	color: #fff;
+	color: white;
 	border: none;
 	display: flex;
 	cursor: pointer;
 }
 
 .form__link {
-	margin-top: -30px;
 	text-align: center;
 }
 
-.form__link.is-forgot-password {
-	align-self: flex-end;
+.form__link.is-signup-toggle {
+	margin-top: 10px;
 }
