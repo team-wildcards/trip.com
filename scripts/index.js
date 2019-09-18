@@ -1,4 +1,4 @@
-$(".form__field .icon.is-show-password").click(()=> {
+$(".form__field .icon.is-show-password").click(() => {
 	const password = document.querySelector('.form__field input[name="password"]');
 	const icon = document.querySelector('.form__field .icon.is-show-password');
 
@@ -7,7 +7,7 @@ $(".form__field .icon.is-show-password").click(()=> {
 		icon.classList.remove('fa-eye-slash');
 		icon.classList.add('fa-eye');
 
-		setTimeout(()=> {
+		setTimeout(() => {
 			password.setAttribute('type', 'password');
 			icon.classList.remove('fa-eye');
 			icon.classList.add('fa-eye-slash');
@@ -15,16 +15,17 @@ $(".form__field .icon.is-show-password").click(()=> {
 	}
 });
 
-const toggleSignupForm = ()=> {
+const toggleSignupForm = () => {
 	let form = $('.form');
 	form.addClass("transparent");
 
-	setTimeout(()=> {
+	setTimeout(() => {
 		form.toggleClass("is-login").toggleClass('is-signup');
 
 		if (form.hasClass('is-signup')) {
 			$('input[type="submit"]').attr("value", "SIGN UP");
-			form.attr("target", "signup.php");
+			$('input[type="submit"]').attr("name", "signup");
+			form.attr("action", "signup.php");
 
 			$(".form__link.is-signup-toggle").html(`
 				Already have an account? <br>
@@ -32,10 +33,10 @@ const toggleSignupForm = ()=> {
 					Log in.
 				</a>
 			`)
-		}
-		else {
+		} else {
 			$('input[type="submit"]').attr("value", "LOG IN");
-			form.attr("target", "login.php");
+			$('input[type="submit"]').attr("name", "login");
+			form.attr("action", "login.php");
 
 			$(".form__link.is-signup-toggle").html(`
 				New here?
@@ -44,9 +45,9 @@ const toggleSignupForm = ()=> {
 				</a>
 			`)
 		}
-		
+
 		form.removeClass("transparent");
-	}, 1100)
+	}, 900)
 }
 
 $(".form__link.is-signup-toggle > a").click(toggleSignupForm);
