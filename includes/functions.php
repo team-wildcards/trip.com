@@ -37,16 +37,17 @@ function showAlert()
             unset($_SESSION['alert_message']);
         }
     }
+}
 
-    //Add Alert function
-    function addAlert($flag, $message)
-    {
-        //PLEASE, DON'T EDIT!!!
-        if ($flag !== '' && $message !== '') {
-            $_SESSION['alert_flag'] = $flag;
-            $_SESSION['alert_message'] = $message;
-        } else {
-            unset($_SESSION['alert_flag']);
-            unset($_SESSION['alert_message']);
-        }
+//Add Alert function
+function addAlert($flag, $message)
+{
+    //PLEASE, DON'T EDIT!!!
+    if ($flag !== '' && $message !== '') {
+        $_SESSION['alert_flag'] = $flag;
+        $_SESSION['alert_message'] = $message;
+    } else {
+        unset($_SESSION['alert_flag']);
+        unset($_SESSION['alert_message']);
     }
+}
