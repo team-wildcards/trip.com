@@ -30,10 +30,12 @@ include 'includes/functions.php';
 				echo "Welcome " . $_SESSION['name'] . "! <br>";
 			}
 			?>
-
-			Your Sign in was successful
+			<span>Your Sign in was successful.</span>
 		</strong>
-		<span>We're the Wildcards. And we're pleased to have you.</span>
+
+		<span class="card__footer">
+			We're the Wildcards. And we're pleased to have you.
+		</span>
 	</p>
 </body>
 

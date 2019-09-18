@@ -1,7 +1,7 @@
 <!-- This is a title bar, with branding (title & logo) to the left, and navigation to the right. -->
 <style>
 	.navbar {
-		background-color: #200038;
+		background-color: var(--primary-color-dark);
 		height: 10vh;
 	}
 
@@ -23,7 +23,7 @@
 	}
 
 	.nav-item.active {
-		background-color: #FFE500;
+		background-color: var(--secondary-color);
 		color: white;
 		border-radius: 5px;
 		margin: 0 10px;

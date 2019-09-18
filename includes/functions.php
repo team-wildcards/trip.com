@@ -22,19 +22,20 @@ function showAlert()
 
         <?php } elseif ($_SESSION['alert_flag'] == 'success') { ?>
 
-            <!-- Add CSS & FrontEnd to display Success Messages here -->
-            <!-- Do this by exposing: -->
-            <?php echo "<div class='alert alert-success'>" . $_SESSION['alert_message'] . "</div>"; ?>
+                <!-- Add CSS & FrontEnd to display Success Messages here -->
+                <!-- Do this by exposing: -->
+                <?php echo "<div class='alert alert-success'>" . $_SESSION['alert_message'] . "</div>"; ?>
 
-        <?php } elseif ($_SESSION['alert_flag'] == 'info') { ?>
+            <?php } elseif ($_SESSION['alert_flag'] == 'info') { ?>
 
-            <!-- Add CSS & FrontEnd to display Notices here -->
-            <!-- Do this by exposing: -->
-            <?php echo "<div class='alert alert-info'>" . $_SESSION['alert_message'] . "</div>"; ?>
-<?php }
-        //DON'T EDIT!!!
-        unset($_SESSION['alert_flag']);
-        unset($_SESSION['alert_message']);
+                <!-- Add CSS & FrontEnd to display Notices here -->
+                <!-- Do this by exposing: -->
+                <?php echo "<div class='alert alert-info'>" . $_SESSION['alert_message'] . "</div>"; ?>
+    <?php }
+            //DON'T EDIT!!!
+            unset($_SESSION['alert_flag']);
+            unset($_SESSION['alert_message']);
+        }
     }
 }
 
