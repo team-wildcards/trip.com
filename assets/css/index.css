@@ -6,6 +6,34 @@ main {
 	align-items: center;
 }
 
+.background-art {
+	pointer-events: none;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.background-art :first-child {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 70%;
+	object-fit: contain;
+	object-position: left top;
+}
+
+.background-art :last-child {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	height: 40%;
+	object-fit: contain;
+	object-position: right bottom;
+}
+
 .form {
 	padding: 30px 10%;
   height: 85%;
@@ -26,6 +54,24 @@ main {
     width: 80vw;
     border-radius: 10px;
 		padding: 30px 5%;
+	}
+	
+	.background-art :first-child {
+		height: 40%;
+	}
+
+	.background-art :last-child {
+		height: 40%;
+	}
+}
+
+@media (min-width: 1000px) {
+  .background-art :first-child {
+		height: 80%;
+	}
+
+	.background-art :last-child {
+		height: 50%;
 	}
 }
 

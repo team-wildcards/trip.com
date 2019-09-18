@@ -12,6 +12,11 @@
 	<?php include('./shared/titlebar.php'); ?>
 
 	<main>
+		<div class="background-art">		
+			<img src="assets/images/top-bg.png" />
+			<img src="assets/images/bottom-bg.png" />
+		</div>
+		
 		<form class="form is-login" target="login.php">
 			<div class="form__field">
 				<i class="fa fa-envelope icon"></i>
