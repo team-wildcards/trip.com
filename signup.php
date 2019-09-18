@@ -22,18 +22,18 @@ if (isset($_POST['signup'])) {
     $email_query = mysqli_query($con, "SELECT * FROM users WHERE email = '$email'") or die(mysqli_error($con));
     $email_count = mysqli_num_rows($email_query);
 
-    if (validateEmail($email)) {
+    if (!validateEmail($email)) {
         addAlert('error', 'Invalid Email address');
-        echo "<script>document.location='signup.php'</script>";
-    } else if (strlen($password) < 6) {
-        addAlert('error', 'Password must be atleast Six (6) characters');
-        echo "<script>document.location='signup.php'</script>";
+        echo "<script>document.location='index.php'</script>";
+    } else if (strlen($password) < 5) {
+        addAlert('error', 'Password must be atleast Five (5) characters');
+        echo "<script>document.location='index.php'</script>";
     } else if ($password != $confirm_password) {
         addAlert('error', 'Passwords dont Match');
-        echo "<script>document.location='signup.php'</script>";
+        echo "<script>document.location='index.php'</script>";
     } else if ($email_count > 0) {
         addAlert('error', 'Email address already exists!');
-        echo "<script>document.location='signup.php'</script>";
+        echo "<script>document.location='index.php'</script>";
     } else {
 
 

@@ -46,7 +46,8 @@
 }
 
 main {
-	height: 90vh; /*Takes up all space below titlebar*/
+	height: 90vh;
+	/*Takes up all space below titlebar*/
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: center;
@@ -55,8 +56,8 @@ main {
 
 .form {
 	padding: 30px 5%;
-  height: 85%;
-  width: 70vh;
+	height: 85%;
+	width: 70vh;
 	border-radius: 25px;
 	background: #fff;
 	box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.25);
@@ -69,11 +70,11 @@ main {
 }
 
 @media (max-width: 600px) {
-  .form {
-    width: 80vw;
-    border-radius: 10px;
+	.form {
+		width: 80vw;
+		border-radius: 10px;
 	}
-	
+
 	.background-art :first-child {
 		height: 40%;
 	}
@@ -84,7 +85,7 @@ main {
 }
 
 @media (min-width: 1000px) {
-  .background-art :first-child {
+	.background-art :first-child {
 		height: 80%;
 	}
 
@@ -106,7 +107,8 @@ main {
 	display: flex;
 	align-items: center;
 	border: 1px solid #2D0051;
-	border-radius: 1000px; /*An obscenely large border radius makes the shorter side a perfect curve*/
+	border-radius: 1000px;
+	/*An obscenely large border radius makes the shorter side a perfect curve*/
 	overflow: hidden;
 	height: 50px;
 	width: 100%;
@@ -118,7 +120,8 @@ main {
 	border: none;
 	margin: 0 0;
 	padding: 0 10px;
-	flex: 100 100 90%; /*flex-grow flex-shrink flex-basis*/
+	flex: 100 100 90%;
+	/*flex-grow flex-shrink flex-basis*/
 }
 
 .form__field .icon {
@@ -126,7 +129,8 @@ main {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	flex: 1 1 10%; /*flex-grow flex-shrink flex-basis*/
+	flex: 1 1 10%;
+	/*flex-grow flex-shrink flex-basis*/
 	padding: 0 10px;
 	background-color: #2D0051;
 	color: white;

@@ -18,19 +18,19 @@ function showAlert()
 
             <!-- Add CSS & FrontEnd to display Errors here -->
             <!-- Do this by exposing: -->
-            <?php echo "<span style='color: red'>" . $_SESSION['alert_message'] . "</span>"; ?>
+            <?php echo "<div class='alert alert-danger'>" . $_SESSION['alert_message'] . "</div>"; ?>
 
         <?php } elseif ($_SESSION['alert_flag'] == 'success') { ?> <div class="row" style="margin-top: 8px;">
 
                 <!-- Add CSS & FrontEnd to display Success Messages here -->
                 <!-- Do this by exposing: -->
-                <?php echo "<span style='color: green'>" . $_SESSION['alert_message'] . "</span>"; ?>
+                <?php echo "<div class='alert alert-success'>" . $_SESSION['alert_message'] . "</div>"; ?>
 
             <?php } elseif ($_SESSION['alert_flag'] == 'info') { ?>
 
                 <!-- Add CSS & FrontEnd to display Notices here -->
                 <!-- Do this by exposing: -->
-                <?php echo "<span style='color: blue'>" . $_SESSION['alert_message'] . "</span>"; ?>
+                <?php echo "<div class='alert alert-info'>" . $_SESSION['alert_message'] . "</div>"; ?>
     <?php }
             //DON'T EDIT!!!
             unset($_SESSION['alert_flag']);
