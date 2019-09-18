@@ -22,13 +22,41 @@
 		padding: 0 10px;
 	}
 
-	.nav-item.active {
+	.nav-item.active#sign-out {
 		background-color: var(--secondary-color);
-		color: white;
 		border-radius: 5px;
 		margin: 0 10px;
+	}
+
+	.nav-item.active#sign-out > a.nav-link {
+		color: var(--primary-color);
 		font-style: bold;
 		text-align: center;
+	}
+
+	.navbar-toggler {
+		position: absolute;
+		right: 20px;
+		top: 10px;
+		z-index: 1;
+		width: 150px;
+	}
+
+	.navbar-toggler .nav-item {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 20;
+	}
+
+	.navbar-toggler .nav-item .nav-link {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
 </style>
 
@@ -50,14 +78,18 @@
 			<li class="nav-item">
 				<a class="nav-link" href="#">Our Team</a>
 			</li>
-			<!-- li class="nav-item active">
-				<a class="nav-link" href="#">Login</a>
-			</li -->
+			<li class="nav-item active" id="sign-out">
+				<a class="nav-link" href="logout.php">Sign Out</a>
+			</li>
 		</ul>
 	</nav>
 
 	<!-- Disabled 'cos it currently doesn't work as expected -->
-	<button disabled class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+	<button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
 		<span class="navbar-toggler-icon"></span>
+		
+		<li class="nav-item active" id="sign-out">
+			<a class="nav-link" href="logout.php">Sign Out</a>
+		</li>
 	</button>
 </header>

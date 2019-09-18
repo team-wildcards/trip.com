@@ -33,7 +33,7 @@ if (isset($_POST['login'])) {
         //Add to Session
         $_SESSION['id'] = $id;
         $_SESSION['name'] = $name;
-        addAlert('success', 'You Successfully Logged in');
+        // addAlert('success', 'You Successfully Logged in');
         //TODO: Repace with `success.php` with success page
         echo "<script type='text/javascript'>document.location='success.php'</script>";
     }

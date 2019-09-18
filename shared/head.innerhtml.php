@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="icon" type="image/png" href="assets/images/TripDotCom-small.png"> 
 
 <!-- Fonts and Font Awesome -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -43,3 +44,28 @@
 
 <!-- Global styles and Reusable CSS Vars -->
 <link rel="stylesheet" href="./assets/css/globals.css">
+
+<script>
+	const normalizeViewportHeight = ()=> {
+		let viewport = document.querySelector('meta[name="viewport"]');
+		let newViewport = viewport;
+
+		defaultValue = "width=device-width, height=device-height, initial-scale=1.0";
+		normalizedValue = "width=device-width, height=500, initial-scale=1.0"
+
+		if (document.documentElement.clientHeight < 500) {
+			newViewport.setAttribute("content", normalizedValue);
+
+			document.head.replaceChild(newViewport, viewport);	
+		}
+		else if (document.documentElement.clientHeight > 500) {
+			newViewport.setAttribute("content", defaultValue);
+
+			document.head.replaceChild(newViewport, viewport);
+		}
+	}
+
+	window.onload = normalizeViewportHeight;
+
+	window.onresize = normalizeViewportHeight;
+</script>
