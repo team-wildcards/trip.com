@@ -12,7 +12,7 @@
 	<?php include('./shared/titlebar.php'); ?>
 
 	<main>
-		<form class="form is-login">
+		<form class="form is-login" target="login.php">
 			<div class="form__field">
 				<i class="fa fa-envelope icon"></i>
 				<input type="email" name="email" placeholder="Email">

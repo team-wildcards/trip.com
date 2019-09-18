@@ -73,6 +73,7 @@ main {
 	position: absolute;
 	right: 0;
 	z-index: 2;
+	cursor: pointer;
 }
 
 .form__submit {

@@ -1,12 +1,18 @@
-$(".is-show-password").click(()=> {
-	$(this).toggleClass("fa-eye-slash").toggleClass('fa-eye');
-	
-	var input = $(this).prev().attr("type");
-	if (input === "password")
-		$(this).prev().attr("type", "text");
-		
-	else
-		$(this).prev().attr("type", "password");
+$(".form__field .icon.is-show-password").click(()=> {
+	const password = document.querySelector('.form__field input[name="password"]');
+	const icon = document.querySelector('.form__field .icon.is-show-password');
+
+	if (password.getAttribute('type') == 'password') {
+		password.setAttribute('type', 'text');
+		icon.classList.remove('fa-eye-slash');
+		icon.classList.add('fa-eye');
+
+		setTimeout(()=> {
+			password.setAttribute('type', 'password');
+			icon.classList.remove('fa-eye');
+			icon.classList.add('fa-eye-slash');
+		}, 1500);
+	}
 });
 
 const toggleSignupForm = ()=> {
@@ -18,6 +24,7 @@ const toggleSignupForm = ()=> {
 
 		if (form.hasClass('is-signup')) {
 			$('input[type="submit"]').attr("value", "SIGN UP");
+			form.attr("target", "signup.php");
 
 			$(".form__link.is-signup-toggle").html(`
 				Already have an account?
@@ -28,6 +35,7 @@ const toggleSignupForm = ()=> {
 		}
 		else {
 			$('input[type="submit"]').attr("value", "LOG IN");
+			form.attr("target", "login.php");
 
 			$(".form__link.is-signup-toggle").html(`
 				New here?
