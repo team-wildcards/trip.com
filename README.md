@@ -7,23 +7,28 @@ Project Url: https://trips-com.herokuapp.com
 
 ## Team Members
 
-DESIGN
-Ifhoghale Wilson
-Demily
-Moriarty
+### DESIGN
 
-FRONTEND
-Feranmi Akinladd
-cirqlar
-Affiong
-darkangel
-Elgivia Stephen
+- Ifhoghale Wilson
+- Demily
+- Moriarty
 
-BACKEND
-JudeJay
-Pepjoe
+### FRONTEND
 
-Figma Design: https://www.figma.com/file/LGX9KEZZ3OyeFp1ikpw8OV/Team_wildcards?node-id=0%3A1
+- Feranmi Akinlade
+- cirqlar
+- Affiong
+- darkangel
+- Elgivia Stephen
+
+### BACKEND
+
+- JudeJay
+- Pepjoe
+
+### Figma Design:
+
+https://www.figma.com/file/LGX9KEZZ3OyeFp1ikpw8OV/Team_wildcards?node-id=0%3A1
 
 ## Articles
 
