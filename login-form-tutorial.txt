@@ -1,0 +1,14 @@
+In this tutorial a login form page will be created using CSS3, HTML5 and JS.
+
+The <head> element is a container for  the metadata (defines the document title, character set, styles, scripts) and is placed between <html> tag and the <body> tag. 
+The <link> element is used to link to external style sheets, the <title> element defines the title of the document, the <script> tag is used to define a client-side script (Javascript)
+
+The <body> tag defines the document's body. As it pertains our login.html the <body> elements contains a <div> element used as the container for the html <form> element.
+In the <form> element we have different tags such as <h2> (HTML subheading), <input> (specifies an input field where the user can enter data such as email and password), <button> (a clickable button that validates the user inputs) and <p> (defines a paragraph).
+
+In the login.css, the <body> tag is used to manage style property of the HTML such as the font-family. In styling any html element the id or class attribute used depending on if it applies to a unique page (id) or to a multiple element (class).
+The <div> element containing the <form> tag is styled to be at the center of the page with a white background and a box-shadow. Then the <h3> tag is styled to be position at the center with a bold font-weight.
+The input boxes are also set to a width of 100%, padding, margin all to make sure that it is properly aligned and stacked on each other evenly and neatly. Also the email, padlock & glyphicon-eye-open icons are positioned using top and left properties as it's position set to be relative. 
+The login button action is set....(to be completed by the backend devs). Lastly on the CSS, the login page is made to be reponsive on any device by using media query.
+
+Lastly the login.js is where the functionality/behaviour of the glyphicon icon added. The icon when toogled-close is made to show the password entered by the user and also to hide the password once it's clicked again.
