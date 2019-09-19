@@ -48,7 +48,10 @@ CSS is great, but it can get messy and difficult to maintain styles as the css f
 **_Do not use abbreviations when naming elements. This introduces confusion as other team members may struggle to figure out what it represents. For example, use ```.button``` instead of ```.btn```. It may be longer to type, but it makes your code more readable and saves the team headache. Be very generous with comments._**
 
 #### Do Not Use Inline Styles. Ever.
-Inline styles have just about the highest specificity an so cannot be overriden from with the stylesheet. They also make debugging style conflicts more difficult. Inline styles do not lend themselves to the DRY principle.
+Inline styles have just about the highest specificity an so cannot be overriden from with the stylesheet. They also make debugging style conflicts more difficult. Inline styles do not lend themselves to the DRY principle.   
+
+#### Do Not Use `!important`.
+This is a suggestion you will find on many blogs and articles - and for good reason. The `!important` flag is a shortcut that doesn't really fix the problem. You should fix any specifity issues that cause your rules to be overridden. Using `!important` will have unintended consequences later on by also overriding styles you didn't want it to affect. The methodology described in this document was designed to avoid all specificity issues that may create a desire for `!important`. Following these guidelines will make styling a breeze.
 
 #### Modularity
 The complexity of a stylesheet is directly proportional to the length of the file. 
