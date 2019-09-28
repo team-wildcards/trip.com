@@ -1,4 +1,4 @@
-# HNGi6 Task for Stage 3
+# HNGi6 Task for Stage 2
 
 # Team Wildcards
 
